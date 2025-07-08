@@ -7,7 +7,7 @@ import time
 import logging as log
 
 import config as cfg
-from controller import load_cell  # or hardware.load_cell depending on your structure
+from hardware import load_cell  # or hardware.load_cell depending on your structure
 
 # Control tolerances
 FORCE_TOLERANCE = 5       # Newtons
