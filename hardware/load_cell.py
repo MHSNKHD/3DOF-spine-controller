@@ -1,5 +1,5 @@
 # load_cell.py
-# oliverwigger
+# Copyright (c) 2025 Mohsen Khodaee, Oliver Wigger
 
 import hardware.load_cell_bota as load_cell_bota
 import config as cfg
@@ -106,3 +106,9 @@ def log_all():
     log.debug("Mx: " + str(lc._t[0]))
     log.debug("My: " + str(lc._t[1]))
     log.debug("Mz: " + str(lc._t[2]))
+
+def get_forces():
+    return list(lc._f)  # Fx, Fy, Fz
+
+def get_moments():
+    return list(lc._t)  # Mx, My, Mz
