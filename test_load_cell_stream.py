@@ -4,7 +4,7 @@ from hardware import load_cell
 load_cell.start()
 
 try:
-    for _ in range(20):  # print 20 samples
+    for _ in range(1000):  # print 20 samples
         fx, fy, fz = load_cell.get_forces()
         mx, my, mz = load_cell.get_moments()
         
