@@ -5,8 +5,8 @@ import hardware.load_cell_bota as load_cell_bota
 import config as cfg
 import logging as log
 import time
-# from gui import processFrame
-#import tkinter as tk
+from gui import processFrame
+import tkinter as tk
 
 lc = None
 
@@ -17,7 +17,7 @@ def start():
         lc = load_cell_bota.BotaSerialSensor(cfg.LC["PORT"])
         lc.start()
         log.info("LoadCell started")
-        #processFrame.bt_homing.config(state=tk.NORMAL, bg=cfg.COL["en"])
+        processFrame.bt_homing.config(state=tk.NORMAL, bg=cfg.COL["en"])
     except:
         print("error")
         log.error("LoadCell FAILED")
