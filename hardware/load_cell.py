@@ -25,7 +25,7 @@ def start():
         lc = load_cell_bota.BotaSerialSensor(usb_ports[0])  # Use the first found
         lc.start()
         log.info("LoadCell started")
-        processFrame.bt_homing.config(state=tk.NORMAL, bg=cfg.COL["en"])
+        #processFrame.bt_homing.config(state=tk.NORMAL, bg=cfg.COL["en"])
         
     except Exception as e:
         print(f"LoadCell startup error: {e}")
