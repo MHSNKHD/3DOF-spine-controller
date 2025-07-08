@@ -5,7 +5,7 @@ from hardware import encoder
 from hardware import fogger
 #from hardware import led
 from hardware import motor
-from hardware import instron
+#from hardware import instron
 
 
 def init():
