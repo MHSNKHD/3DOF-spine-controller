@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jul  7 13:36:53 2025
+# motor.py
+# Copyright (c) 2025 Mohsen Khodaee
 
-@author: mkhod
-"""
 
