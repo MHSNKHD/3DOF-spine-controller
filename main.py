@@ -6,9 +6,9 @@ load_cell.start()
 motor.init()
 
 # Apply 200 N in X
-motor.apply_force("X", 200)
+motor.apply_force("X", 20)
 
 # Apply 2 Nm around Z
-motor.apply_moment("Z", 2.0)
+motor.apply_moment("Z", 1.0)
 
 
