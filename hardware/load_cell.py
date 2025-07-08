@@ -14,7 +14,15 @@ def start():
     global lc
     
     try:
-        lc = load_cell_bota.BotaSerialSensor(cfg.LC["PORT"])
+        # 
+        import glob
+
+        # Try to auto-detect the most likely port
+        usb_ports = glob.glob("/dev/ttyUSB*")
+        if not usb_ports:
+            raise Exception("No USB device found")
+
+        lc = load_cell_bota.BotaSerialSensor(usb_ports[0])  # Use the first found
         lc.start()
         log.info("LoadCell started")
         processFrame.bt_homing.config(state=tk.NORMAL, bg=cfg.COL["en"])
