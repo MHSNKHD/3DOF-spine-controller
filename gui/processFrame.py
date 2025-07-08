@@ -9,7 +9,7 @@ import time
 from hardware import load_cell
 
 import hardware.motor as motor
-import testing.sequence as sequence
+#import testing.sequence as sequence
 import config as cfg
 import hardware.init as init
 
