@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jul  7 13:35:14 2025
+import serial
 
-@author: mkhod
-"""
+ser = serial.Serial('/dev/ttyUSB0', 460800, timeout=1)
+print("Serial port opened successfully.")
+ser.close()
 
