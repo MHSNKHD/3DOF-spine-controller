@@ -6,8 +6,8 @@ import hardware.motor as motor
 # Initialize motor GPIO
 motor.init()
 
-# Duration options in milliseconds
-durations = [50, 100, 150, 200]
+# Updated duration options in milliseconds
+durations = [10, 20, 30, 40, 50, 100, 150, 200, 250, 300]
 
 def move_motor(axis, direction, duration_ms):
     print(f"Moving motor {axis} in direction {direction} for {duration_ms} ms")
