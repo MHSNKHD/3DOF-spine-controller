@@ -1,22 +1,20 @@
-import RPi.GPIO as GPIO
+# test_motor_direction.py
 import time
+import config as cfg
+from hardware import motor
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(24, GPIO.OUT)  # XP
-GPIO.setup(23, GPIO.OUT)  # XN
+motor.init()
 
-print("Positive direction")
-GPIO.output(24, 1)
-GPIO.output(23, 0)
+print("Testing X+")
+motor.mot_pos("X")
 time.sleep(1)
-GPIO.output(24, 0)
+motor.mot_stop("X")
 
 time.sleep(1)
 
-print("Negative direction")
-GPIO.output(24, 0)
-GPIO.output(23, 1)
+print("Testing X-")
+motor.mot_neg("X")
 time.sleep(1)
-GPIO.output(23, 0)
+motor.mot_stop("X")
 
-GPIO.cleanup()
+motor.stop_all()
