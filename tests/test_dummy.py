@@ -1,14 +1,22 @@
-from hardware import load_cell
+import RPi.GPIO as GPIO
 import time
 
-load_cell.start()
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(24, GPIO.OUT)  # XP
+GPIO.setup(23, GPIO.OUT)  # XN
 
-for _ in range(10):
-    fx, fy, fz = load_cell.get_forces()
-    mx, my, mz = load_cell.get_moments()
-    print(f"Fx: {fx:.2f} N, Fy: {fy:.2f} N, Fz: {fz:.2f} N")
-    print(f"Mx: {mx:.2f} Nm, My: {my:.2f} Nm, Mz: {mz:.2f} Nm")
-    print("---------------------")
-    time.sleep(0.5)
+print("Positive direction")
+GPIO.output(24, 1)
+GPIO.output(23, 0)
+time.sleep(1)
+GPIO.output(24, 0)
 
-load_cell.stop()
+time.sleep(1)
+
+print("Negative direction")
+GPIO.output(24, 0)
+GPIO.output(23, 1)
+time.sleep(1)
+GPIO.output(23, 0)
+
+GPIO.cleanup()
