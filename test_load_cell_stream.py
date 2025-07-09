@@ -1,3 +1,6 @@
+# load_cell.py
+# Copyright (c) 2025 Mohsen Khodaee
+
 import time
 from hardware import load_cell
 
