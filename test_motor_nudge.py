@@ -2,7 +2,7 @@
 # Copyright (c) 2025 Mohsen Khodaee
 
 import time
-import motor  # Assuming your motor control functions are in motor.py
+import hardware.motor as motor  # Assuming your motor control functions are in motor.py
 
 # Initialize GPIO and motor pins
 motor.init()
