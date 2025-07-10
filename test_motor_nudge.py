@@ -7,6 +7,19 @@ import time
 GPIO.cleanup()
 GPIO.setmode(GPIO.BCM)
 
+# Motor pin list
+pins = [24, 23, 4, 14, 27, 15]
+
+# Initialize all pins and force LOW
+for pin in pins:
+    GPIO.setup(pin, GPIO.OUT)
+    GPIO.output(pin, 0)
+
+# Let things settle
+time.sleep(0.5)
+
+# Now test motors (same as before)
+
 
 # Test X motor
 GPIO.setup(24, GPIO.OUT)  # XP 
