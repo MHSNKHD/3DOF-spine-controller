@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Mohsen Khodaee
+
 import RPi.GPIO as GPIO
 import time
 

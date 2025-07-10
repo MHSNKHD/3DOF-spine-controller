@@ -1,5 +1,5 @@
 # init.py
-# oliverwigger
+# Copyright (c) 2025 Mohsen Khodaee, Oliverwigger
 
 from hardware import encoder
 from hardware import fogger

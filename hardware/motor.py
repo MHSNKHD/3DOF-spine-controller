@@ -16,6 +16,7 @@ MAX_DURATION = 5          # Max seconds to try applying force/moment
 
 
 def init():
+    GPIO.cleanup()
     GPIO.setmode(GPIO.BCM)
     
     # Setup motor pins
