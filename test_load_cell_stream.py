@@ -5,6 +5,7 @@ import time
 from hardware import load_cell
 
 load_cell.start()
+load_cell.zero()
 
 try:
     for _ in range(1000):  # print 20 samples
@@ -15,6 +16,6 @@ try:
         print(f"Mx: {mx:.2f} Nm, My: {my:.2f} Nm, Mz: {mz:.2f} Nm")
         print("-" * 40)
         
-        time.sleep(0.2)  # 5 Hz
+        time.sleep(0.1)  # 10 Hz
 finally:
     load_cell.stop()
