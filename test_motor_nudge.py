@@ -1,15 +1,21 @@
-# load_cell.py
-# Copyright (c) 2025 Mohsen Khodaee
-
+import RPi.GPIO as GPIO
 import time
-import hardware.motor as motor  # Assuming your motor control functions are in motor.py
 
-# Initialize GPIO and motor pins
-motor.init()
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(24, GPIO.OUT)  # XP
+GPIO.setup(23, GPIO.OUT)  # XN
 
-# Nudge motor X forward very briefly
-print("Nudging motor X in positive direction...")
-motor.mot_pos("X")
-time.sleep(0.05)  # run for 50 milliseconds (adjust for longer or shorter movement)
-motor.mot_stop("X")
-print("Motor X stopped.")
+# Test Positive
+GPIO.output(24, 1)
+GPIO.output(23, 0)
+time.sleep(0.5)
+GPIO.output(24, 0)
+
+# Test Negative
+time.sleep(0.5)
+GPIO.output(24, 0)
+GPIO.output(23, 1)
+time.sleep(0.5)
+GPIO.output(23, 0)
+
+GPIO.cleanup()
