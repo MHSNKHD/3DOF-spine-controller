@@ -51,7 +51,7 @@ GPIO.setup(15, GPIO.OUT)  # ZN
 GPIO.output(27, 1)
 GPIO.output(15, 0)
 time.sleep(1)
-GPIO.output(17, 0)
+GPIO.output(27, 0)
 time.sleep(1)
 
 # Negative
