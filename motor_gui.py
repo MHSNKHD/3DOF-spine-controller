@@ -41,9 +41,12 @@ for i, axis in enumerate(axes, start=1):
     # Positive direction button
     btn_pos = tk.Button(root, text=f"{axis}+",
                         command=make_command(axis, "P"))
+    btn_pos.grid(row=i, column=1, padx=5)
+    
     # Negative direction button
     btn_neg = tk.Button(root, text=f"{axis}-",
-                        command=make_command(axis, "N")) 
+                        command=make_command(axis, "N"))
+    btn_neg.grid(row=i, column=2, padx=5)
     
     
 # Run GUI loop
