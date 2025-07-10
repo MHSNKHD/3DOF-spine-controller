@@ -23,7 +23,6 @@ GPIO.output(23, 0)
 
 # Test Y motor
 
-GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.OUT)   # YP
 GPIO.setup(14, GPIO.OUT)  # YN
 
@@ -43,7 +42,6 @@ GPIO.output(14, 0)
 
 # Test Z motor
 
-GPIO.setmode(GPIO.BCM)
 GPIO.setup(27, GPIO.OUT)   # ZP
 GPIO.setup(15, GPIO.OUT)  # ZN
 
@@ -55,7 +53,7 @@ GPIO.output(27, 0)
 time.sleep(1)
 
 # Negative
-GPIO.output(17, 0)
+GPIO.output(27, 0)
 GPIO.output(15, 1)
 time.sleep(1)
 GPIO.output(15, 0)
