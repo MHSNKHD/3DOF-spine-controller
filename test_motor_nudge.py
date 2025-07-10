@@ -20,4 +20,44 @@ time.sleep(1)  # Rotate for 1 second
 
 # Stop motor
 GPIO.output(23, 0)
+
+# Test Y motor
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(4, GPIO.OUT)   # YP
+GPIO.setup(14, GPIO.OUT)  # YN
+
+# Positive
+GPIO.output(4, 1)
+GPIO.output(14, 0)
+time.sleep(1)
+GPIO.output(4, 0)
+time.sleep(1)
+
+# Negative
+GPIO.output(4, 0)
+GPIO.output(14, 1)
+time.sleep(1)
+GPIO.output(14, 0)
+
+
+# Test Z motor
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(27, GPIO.OUT)   # ZP
+GPIO.setup(15, GPIO.OUT)  # ZN
+
+# Positive
+GPIO.output(27, 1)
+GPIO.output(15, 0)
+time.sleep(1)
+GPIO.output(17, 0)
+time.sleep(1)
+
+# Negative
+GPIO.output(17, 0)
+GPIO.output(15, 1)
+time.sleep(1)
+GPIO.output(15, 0)
+
 GPIO.cleanup()
