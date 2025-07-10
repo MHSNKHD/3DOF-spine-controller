@@ -34,15 +34,17 @@ axes = ["X", "Y", "Z"]
 for i, axis in enumerate(axes, start=1):
     tk.Label(root, text=f"Motor {axis}").grid(row=i, column=0, padx=10, pady=5)
 
+
+    def make_command(axis, direction):
+        return lambda: move_motor(axis, direction, duration_var.get())
+    
     # Positive direction button
     btn_pos = tk.Button(root, text=f"{axis}+",
-                        command=lambda a=axis, d="P": move_motor(a, d, duration_var.get()))
-    btn_pos.grid(row=i, column=1, padx=5)
-
+                        command=make_command(axis, "P"))
     # Negative direction button
     btn_neg = tk.Button(root, text=f"{axis}-",
-                        command=lambda a=axis, d="N": move_motor(a, d, duration_var.get()))
-    btn_neg.grid(row=i, column=2, padx=5)
-
+                        command=make_command(axis, "N")) 
+    
+    
 # Run GUI loop
 root.mainloop()
