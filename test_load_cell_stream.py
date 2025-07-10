@@ -5,7 +5,9 @@ import time
 from hardware import load_cell
 
 load_cell.start()
+time.sleep(3)
 load_cell.zero()
+time.sleep(3)
 
 try:
     for _ in range(1000):  # print 20 samples
