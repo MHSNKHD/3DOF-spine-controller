@@ -18,9 +18,9 @@ def start():
         lc.start()
         log.info("LoadCell started")
         processFrame.bt_homing.config(state=tk.NORMAL, bg=cfg.COL["en"])
-    except:
-        print("error")
-        log.error("LoadCell FAILED")
+    except Exception as e:
+        print(f"LoadCell startup error: {e}")
+        log.error(f"LoadCell FAILED: {e}")
         
     lc._fx0.value = cfg.LC0F[0]
     lc._fy0.value = cfg.LC0F[1]
