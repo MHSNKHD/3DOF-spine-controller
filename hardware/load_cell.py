@@ -22,23 +22,13 @@ def start():
         print(f"LoadCell startup error: {e}")
         log.error(f"LoadCell FAILED: {e}")
         
-    # lc._fx0.value = cfg.LC0F[0]
-    # lc._fy0.value = cfg.LC0F[1]
-    # lc._fz0.value = cfg.LC0F[2]
+    lc._fx0.value = cfg.LC0F[0]
+    lc._fy0.value = cfg.LC0F[1]
+    lc._fz0.value = cfg.LC0F[2]
     
-    # lc._tx0.value = cfg.LC0T[0]
-    # lc._ty0.value = cfg.LC0T[1]
-    # lc._tz0.value = cfg.LC0T[2]
-    
-    
-    # changing from multiprocess to thread
-    lc._fx0 = cfg.LC0F[0]
-    lc._fy0 = cfg.LC0F[1]
-    lc._fz0 = cfg.LC0F[2]
-    
-    lc._tx0 = cfg.LC0T[0]
-    lc._ty0 = cfg.LC0T[1]
-    lc._tz0 = cfg.LC0T[2]
+    lc._tx0.value = cfg.LC0T[0]
+    lc._ty0.value = cfg.LC0T[1]
+    lc._tz0.value = cfg.LC0T[2]
     
 def stop():
     lc.stop()
@@ -87,23 +77,13 @@ def zero():
     cfg.LC0F = [round(sum(fx_sum) / len(fx_sum), 5), round(sum(fy_sum) / len(fy_sum), 5), round(sum(fz_sum) / len(fz_sum), 5)]
     cfg.LC0T = [round(sum(tx_sum) / len(tx_sum), 5), round(sum(ty_sum) / len(ty_sum), 5), round(sum(tz_sum) / len(tz_sum), 5)]
     
-    # lc._fx0.value = cfg.LC0F[0]
-    # lc._fy0.value = cfg.LC0F[1]
-    # lc._fz0.value = cfg.LC0F[2]
+    lc._fx0.value = cfg.LC0F[0]
+    lc._fy0.value = cfg.LC0F[1]
+    lc._fz0.value = cfg.LC0F[2]
     
-    # lc._tx0.value = cfg.LC0T[0]
-    # lc._ty0.value = cfg.LC0T[1]
-    # lc._tz0.value = cfg.LC0T[2]
-    
-    
-    # changing from multiprocess to thread
-    lc._fx0 = cfg.LC0F[0]
-    lc._fy0 = cfg.LC0F[1]
-    lc._fz0 = cfg.LC0F[2]
-    
-    lc._tx0 = cfg.LC0T[0]
-    lc._ty0 = cfg.LC0T[1]
-    lc._tz0 = cfg.LC0T[2]
+    lc._tx0.value = cfg.LC0T[0]
+    lc._ty0.value = cfg.LC0T[1]
+    lc._tz0.value = cfg.LC0T[2]
     
     log.info(
         "\nLOAD_CELL_ZERO \n"
