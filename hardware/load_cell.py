@@ -55,7 +55,7 @@ def zero():
     ty_sum = []
     tz_sum = []
 
-    global lc
+    # global lc
     for _ in range(cfg.LC["N_ZERO"]):
         fx_sum.append(lc._f[0])
         fy_sum.append(lc._f[1])
