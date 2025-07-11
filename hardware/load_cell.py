@@ -37,6 +37,17 @@ def stop():
 def zero():
     time.sleep(3)
     log.debug("Zero LoadCell...")
+    
+    # ⚠️ Wait until data changes from default (sanity check)
+    timeout = 5
+    t_start = time.time()
+    while time.time() - t_start < timeout:
+        if abs(lc._f[0]) > 0.001 or abs(lc._f[1]) > 0.001 or abs(lc._t[0]) > 0.001:
+            break
+        time.sleep(0.1)
+    else:
+        log.warning("LoadCell: No data detected before zeroing.")
+    
     fx_sum = []
     fy_sum = []
     fz_sum = []
