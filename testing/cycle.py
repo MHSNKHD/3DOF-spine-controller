@@ -5,7 +5,7 @@ import logging as log
 import time
 
 import hardware.motor as motor
-import hardware.instron as instron
+#import hardware.instron as instron
 import hardware.encoder as encoder
 import config as cfg
 import hardware.load_cell as load_cell
@@ -84,12 +84,12 @@ def single_cycle(axis, a0, a1, n_abs):
 
 
 # bad time wait function -> FIX
-def _wait_instron():
-    t_elapsed = 0
-    t = time.time()
-    while not instron.read("OUT2") and t_elapsed < cfg.GEN["T_INSTRON"]:
-        t_elapsed = time.time() - t
-    return
+# def _wait_instron():
+#     t_elapsed = 0
+#     t = time.time()
+#     while not instron.read("OUT2") and t_elapsed < cfg.GEN["T_INSTRON"]:
+#         t_elapsed = time.time() - t
+#     return
 
 
 def _start_data_aquisition_cyc(axis):
