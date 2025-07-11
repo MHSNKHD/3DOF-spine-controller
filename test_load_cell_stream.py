@@ -12,7 +12,7 @@ print("Zeroing load cell... Do not apply any load.")
 
 load_cell.zero()
 print("Zeroing complete.")
-time.sleep(5)
+time.sleep(1)
 
 # === Step 3: Read values ===
 
