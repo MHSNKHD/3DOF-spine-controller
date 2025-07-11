@@ -45,16 +45,27 @@ class BotaSerialSensor:
         self._status = None
 
         # Multiprocess Arrays
-        self._f = multiprocessing.Array(ctypes.c_double, (0.0, 0.0, 0.0))
-        self._t = multiprocessing.Array(ctypes.c_double, (0.0, 0.0, 0.0))
+        # self._f = multiprocessing.Array(ctypes.c_double, (0.0, 0.0, 0.0))
+        # self._t = multiprocessing.Array(ctypes.c_double, (0.0, 0.0, 0.0))
 
-        self._fx0 = multiprocessing.Value(ctypes.c_float, 0.0)
-        self._fy0 = multiprocessing.Value(ctypes.c_float, 0.0)
-        self._fz0 = multiprocessing.Value(ctypes.c_float, 0.0)
+        # self._fx0 = multiprocessing.Value(ctypes.c_float, 0.0)
+        # self._fy0 = multiprocessing.Value(ctypes.c_float, 0.0)
+        # self._fz0 = multiprocessing.Value(ctypes.c_float, 0.0)
         
-        self._tx0 = multiprocessing.Value(ctypes.c_float, 0.0)
-        self._ty0 = multiprocessing.Value(ctypes.c_float, 0.0)
-        self._tz0 = multiprocessing.Value(ctypes.c_float, 0.0)
+        # self._tx0 = multiprocessing.Value(ctypes.c_float, 0.0)
+        # self._ty0 = multiprocessing.Value(ctypes.c_float, 0.0)
+        # self._tz0 = multiprocessing.Value(ctypes.c_float, 0.0)
+        # the followung part is added bz me to replace the above commented part
+        self._f = [0.0, 0.0, 0.0]
+        self._t = [0.0, 0.0, 0.0]
+
+        self._fx0 = 0.0
+        self._fy0 = 0.0
+        self._fz0 = 0.0
+
+        self._tx0 = 0.0
+        self._ty0 = 0.0
+        self._tz0 = 0.0
         
         
         # added variables
@@ -242,8 +253,12 @@ class BotaSerialSensor:
         self._lc_is_on = 1
         
         # multiprocess
-        proc = Process(target=self._processdata_thread_nocrc, name="load_cell_multiprocess")
-        proc.start()
+        # proc = Process(target=self._processdata_thread_nocrc, name="load_cell_multiprocess")
+        # proc.start()
+        # the following part is added be me, to replace the above two lines *(changing the process to thread)
+        self.proc_thread = threading.Thread(target=self._processdata_thread_nocrc, name="load_cell_thread", daemon=True)
+        self.proc_thread.start()
+
         time.sleep(1)
         
         #proc_thread = threading.Thread(
