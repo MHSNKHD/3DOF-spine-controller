@@ -121,33 +121,33 @@ class BotaSerialSensor:
                         
                         self._status = struct.unpack_from("H", data_frame, 0)[0]
                         
-                        fx_temp = round(struct.unpack_from("f", data_frame, 2)[0] - self._fx0.value,6)
+                        fx_temp = round(struct.unpack_from("f", data_frame, 2)[0] - self._fx0,6)
                         if abs(fx_temp) < 500: #filter heavy outliers
                             if abs(fx_temp) - abs(self._f[0]) < 300:
                                 self._f[0] = fx_temp
                         
-                        fy_temp = round(struct.unpack_from("f", data_frame, 6)[0] - self._fy0.value,6)
+                        fy_temp = round(struct.unpack_from("f", data_frame, 6)[0] - self._fy0,6)
                         if abs(fy_temp) < 500: #filter heavy outliers
                             if abs(fy_temp) - abs(self._f[1]) < 300:
                                 self._f[1] = fy_temp
                         
-                        fz_temp = round(struct.unpack_from("f", data_frame, 10)[0] - self._fz0.value,6)
+                        fz_temp = round(struct.unpack_from("f", data_frame, 10)[0] - self._fz0,6)
                         if abs(fz_temp) < 500: #filter heavy outliers
                             if abs(fz_temp) - abs(self._f[2]) < 300:
                                 self._f[2] = 0 #fz_temp
                         
                         #torque
-                        tx_temp = -round(struct.unpack_from("f", data_frame, 18)[0] - self._tx0.value,6)
+                        tx_temp = -round(struct.unpack_from("f", data_frame, 18)[0] - self._tx0,6)
                         if abs(tx_temp) < 20: #filter heavy outliers
                             if abs(tx_temp) - abs(self._t[0]) < 10:
                                 self._t[0] = tx_temp
                         
-                        ty_temp = round(struct.unpack_from("f", data_frame, 14)[0] - self._ty0.value,6)
+                        ty_temp = round(struct.unpack_from("f", data_frame, 14)[0] - self._ty0,6)
                         if abs(ty_temp) < 20: #filter heavy outliers
                             if abs(ty_temp) - abs(self._t[1]) < 10:
                                 self._t[1] = ty_temp
                             
-                        tz_temp = round(struct.unpack_from("f", data_frame, 22)[0] - self._tz0.value,6)
+                        tz_temp = round(struct.unpack_from("f", data_frame, 22)[0] - self._tz0,6)
                         if abs(tz_temp) < 20: #filter heavy outliers
                             if abs(tz_temp) - abs(self._t[2]) < 10:
                                 self._t[2] = tz_temp
