@@ -9,12 +9,12 @@ load_cell.start()
 
 # === Step 2: Zero the load cell ===
 print("Zeroing load cell... Do not apply any load.")
-# load_cell.zero()
-# print("Zeroing complete.")
 
+load_cell.zero()
+print("Zeroing complete.")
+time.sleep(5)
 
 # === Step 3: Read values ===
-print("\nReading raw and corrected force/moment data:\n")
 
 for _ in range(100):
     fx, fy, fz = load_cell.lc._f  # already corrected
