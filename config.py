@@ -78,11 +78,11 @@ LC = dict(
     PORT="/dev/ttyUSB0", ACCURACY=3, N_ZERO=100, 
 )
 
-# LC0F = [-143.12794, 192.01763, 0.0] # zero forces x y z [-100, 150, 0]
-# LC0T = [7.82774, 6.71137, -0.22554] # zero torques x y z [5, 5, 0]
+LC0F = [-143.12794, 192.01763, 0.0] # zero forces x y z [-100, 150, 0]
+LC0T = [7.82774, 6.71137, -0.22554] # zero torques x y z [5, 5, 0]
 
-LC0F = [0, 0, 0] # zero forces x y z [-100, 150, 0]
-LC0T = [-100, 0, 0] # zero torques x y z [5, 5, 0]
+# LC0F = [0, 0, 0] # zero forces x y z [-100, 150, 0]
+# LC0T = [-100, 0, 0] # zero torques x y z [5, 5, 0]
 
 # LED
 # -------------------------------------
