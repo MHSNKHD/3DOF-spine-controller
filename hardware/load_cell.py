@@ -17,7 +17,8 @@ def start():
         lc = load_cell_bota.BotaSerialSensor(cfg.LC["PORT"])
         lc.start()
         log.info("LoadCell started")
-        processFrame.bt_homing.config(state=tk.NORMAL, bg=cfg.COL["en"])
+        #this line caused error in load cell data reading. I dont use GUI at the moment
+        #processFrame.bt_homing.config(state=tk.NORMAL, bg=cfg.COL["en"])
     except Exception as e:
         print(f"LoadCell startup error: {e}")
         log.error(f"LoadCell FAILED: {e}")
