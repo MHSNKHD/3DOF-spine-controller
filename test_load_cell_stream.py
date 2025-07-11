@@ -9,12 +9,9 @@ load_cell.start()
 
 # === Step 2: Zero the load cell ===
 print("Zeroing load cell... Do not apply any load.")
-load_cell.zero()
-print("Zeroing complete.")
+# load_cell.zero()
+# print("Zeroing complete.")
 
-# Cache offsets locally
-fx0, fy0, fz0 = load_cell.cfg.LC0F
-tx0, ty0, tz0 = load_cell.cfg.LC0T
 
 # === Step 3: Read values ===
 print("\nReading raw and corrected force/moment data:\n")
