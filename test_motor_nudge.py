@@ -70,7 +70,7 @@ for pin in pins:
     GPIO.output(pin, 0)
 
 # Let things settle
-time.sleep(0.5)
+time.sleep(2)
 
 # Now test motors (same as before)
 
@@ -81,21 +81,21 @@ GPIO.setup(23, GPIO.OUT)  # XN
 
 
 # Wait before starting
-time.sleep(1)
+time.sleep(2)
 
 print("Testing X+")
 # Positive
 GPIO.output(24,1)
 GPIO.output(23,0)
-time.sleep(1)
+time.sleep(2)
 GPIO.output(24,0)
-time.sleep(1) 
+time.sleep(2) 
 
 print("Testing X-")
 #Negative
 GPIO.output(24, 0)
 GPIO.output(23, 1)
-time.sleep(1)
+time.sleep(2)
 GPIO.output(23, 0)
 
 # Stop motor
@@ -110,16 +110,16 @@ print("Testing Y+")
 # Positive
 GPIO.output(4, 1)
 GPIO.output(14, 0)
-time.sleep(1)
+time.sleep(2)
 GPIO.output(4, 0)
-time.sleep(1)
+time.sleep(2)
 
 
 print("Testing Y-")
 # Negative
 GPIO.output(4, 0)
 GPIO.output(14, 1)
-time.sleep(1)
+time.sleep(2)
 GPIO.output(14, 0)
 
 
@@ -132,15 +132,15 @@ print("Testing Z+")
 # Positive
 GPIO.output(27, 1)
 GPIO.output(15, 0)
-time.sleep(1)
+time.sleep(2)
 GPIO.output(27, 0)
-time.sleep(1)
+time.sleep(2)
 
 print("Testing Z-")
 # Negative
 GPIO.output(27, 0)
 GPIO.output(15, 1)
-time.sleep(1)
+time.sleep(2)
 GPIO.output(15, 0)
 
 GPIO.cleanup()
