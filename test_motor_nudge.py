@@ -1,54 +1,13 @@
 # Copyright (c) 2025 Mohsen Khodaee
 
 
-
-
-# # this could help, i took it from oli motor.py
-# def calibrate():
-#     angle_P = [0, 0, 0]
-#     angle_N = [0, 0, 0]
-#     cfg.ENC_ZERO = [0, 0, 0]
-
-#     # start
-#     led.switch_to("ORANGE")
-
-#     # move to "n"-side and measure it
-#     move_all_time("N", cfg.MOT_T_HOMING)
-#     encoder.zero()
-#     for i in range(3):
-#         angle_N[i] = 0
-#     log.debug("Angle_N: " + str(angle_N))
-
-#     # move to "p"-side and measure it
-#     move_all_time("P", cfg.MOT_T_HOMING)
-#     time.sleep(0.2)
-#     for i in range(3):
-#         angle_P[i] = encoder.get_angle(i)
-#         if angle_P[i] < 28.0:
-#             log.error("Encoder slippage detected!")
-        
-#     log.debug("Angle_P: " + str(angle_P))
-    
-
-#     # calculate middle
-#     for i in range(3):
-#         cfg.ENC_ZERO[i] = angle_N[i] + (abs(angle_P[i] - angle_N[i]) / 2)
-
-#     # move to neutral position
-#     move_to_pos([0, 0, 0])
-
-#     # finish
-#     led.switch_to("GREEN")
-#     log.info("Motor Homing DONE")
-#     log.info("               ")
-
-
-
-
-
-
 import RPi.GPIO as GPIO
 import time
+from hardware import motor
+from hardware import encoder
+
+encoder.init()
+motor.calibrate()
 
 # Clean any previous state before beginning
 GPIO.cleanup()
