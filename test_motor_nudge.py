@@ -136,6 +136,7 @@ time.sleep(5)
 print("Testing Z-")
 # Negative
 GPIO.output(27, 0)
+GPIO.output(15, 1)
 time.sleep(1)
 # Stop motor
 GPIO.output(15, 0)
