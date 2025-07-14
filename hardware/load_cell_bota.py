@@ -123,7 +123,8 @@ class BotaSerialSensor:
                         fz_temp = round(struct.unpack_from("f", data_frame, 10)[0] - self._fz0.value,6)
                         if abs(fz_temp) < 500: #filter heavy outliers
                             if abs(fz_temp) - abs(self._f[2]) < 300:
-                                self._f[2] = 0 #fz_temp
+                                #self._f[2] = 0 #fz_temp
+                                self._f[2] = fz_temp
                         
                         #torque
                         tx_temp = -round(struct.unpack_from("f", data_frame, 18)[0] - self._tx0.value,6)
