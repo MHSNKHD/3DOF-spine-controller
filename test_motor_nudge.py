@@ -74,13 +74,14 @@ GPIO.setup(23, GPIO.OUT)  # XN
 
 
 # Wait before starting
-time.sleep(3)
+time.sleep(5)
 
 print("Testing X+")
 # Positive
-GPIO.output(24,1)
 GPIO.output(23,0)
+GPIO.output(24,1)
 time.sleep(1)
+# Stop motor
 GPIO.output(24,0)
 time.sleep(5) 
 
@@ -101,8 +102,8 @@ GPIO.setup(14, GPIO.OUT)  # YN
 
 print("Testing Y+")
 # Positive
-GPIO.output(4, 1)
 GPIO.output(14, 0)
+GPIO.output(4, 1)
 time.sleep(1)
 # Stop motor
 GPIO.output(4, 0)
@@ -126,8 +127,8 @@ GPIO.setup(15, GPIO.OUT)  # ZN
 
 print("Testing Z+")
 # Positive
-GPIO.output(27, 1)
 GPIO.output(15, 0)
+GPIO.output(27, 1)
 time.sleep(1)
 # Stop motor
 GPIO.output(27, 0)
@@ -135,8 +136,9 @@ time.sleep(5)
 
 print("Testing Z-")
 # Negative
-GPIO.output(15, 1)
 GPIO.output(27, 0)
+GPIO.output(15, 1)
+
 time.sleep(1)
 # Stop motor
 GPIO.output(15, 0)
