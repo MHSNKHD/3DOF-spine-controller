@@ -1,6 +1,6 @@
 # Copyright (c) 2025 Mohsen Khodaee
 
-
+import config as cfg
 import RPi.GPIO as GPIO
 import time
 from hardware import motor
